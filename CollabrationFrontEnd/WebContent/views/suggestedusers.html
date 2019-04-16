@@ -1,0 +1,31 @@
+<div class="container">
+<div class="panel panel-info">
+<div class="panel-heading">
+<b>Suggested Users</b>
+</div>
+<div class="panel-body">
+<ul style="list-style:none">
+<li ng-repeat="toUser in suggestedUsers">
+{{toUser.email}}<br>
+{{toUser.firstname}} &nbsp; {{toUser.lastname}}<br>
+
+{{toUser.role}}<br>
+ 
+<button class="btn  btn-info" ng-click="sendFriendRequest(toUser)">Send Friend Request</button><br>
+<img src="http://localhost:9040/MiddleWare/getimage?email={{user.email}}" alt="No Image" height="60px" width="60px">
+             
+<br>
+<a ng-click="getMutualFriends(toUser.email)">Get Mutual Friends</a><br>
+<div ng-show="toUser.email==forUser">Mutual Friends ({{mutualfriends.length}})<br>
+    <ul style="list-style:none">
+      <li ng-repeat="mutualfriend in mutualfriends">
+      {{mutualfriend.email}}
+      </li>
+    </ul>
+    </div>
+<hr>
+</li>
+</ul>
+</div>
+</div>
+</div>
